@@ -1,10 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 body{
   background: #282929;
@@ -38,7 +37,7 @@ body{
 }
 .wrapper .title{
   height: 90px;
-  background: gray;
+  background: #4d636f ;
   border-radius: 5px 5px 0 0;
   color: #fff;
   font-size: 30px;
@@ -66,7 +65,7 @@ body{
   transition: all 0.3s ease;
 }
 form .row input:focus{
-  border-color: gray;
+  border-color: #4d636f ;
   box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
 }
 form .row input::placeholder{
@@ -78,8 +77,8 @@ form .row input::placeholder{
   height: 100%;
   color: #fff;
   font-size: 18px;
-  background: gray;
-  border: 1px solid gray;
+  background: #4d636f ;
+  border: 1px solid #4d636f ;
   border-radius: 5px 0 0 5px;
   display: flex;
   align-items: center;
@@ -89,7 +88,7 @@ form .row input::placeholder{
   margin: -8px 0 20px 0;
 }
 .wrapper form .pass a{
-  color: gray;
+  color: #4d636f ;
   font-size: 17px;
   text-decoration: none;
 }
@@ -101,12 +100,12 @@ form .row input::placeholder{
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: gray;
-  border: 1px solid gray;
+  background: #4d636f ;
+  border: 1px solid #4d636f ;
   cursor: pointer;
 }
 form .button input:hover{
-  background: gray;
+  background: #4d636f ;
 }
 .wrapper form .signup-link{
   text-align: center;
@@ -114,7 +113,7 @@ form .button input:hover{
   font-size: 17px;
 }
 .wrapper form .signup-link a{
-  color: gray;
+  color: #4d636f ;
   text-decoration: none;
 }
 form .signup-link a:hover{
