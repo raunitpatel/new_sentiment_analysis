@@ -1,0 +1,126 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  background: #282929;
+  overflow: hidden;
+}
+::selection{
+  background: rgba(166, 168, 167, 0.639);
+}
+.container{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
+}
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 90px;
+  background: #4d636f ;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .input-box{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .input-box input:focus{
+  border-color: #4d636f ;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .input-box input::placeholder{
+  color: #999;
+}
+.wrapper form .policy{
+  display: flex;
+  align-items: center;
+  margin: -8px 0 20px 0;
+}
+.wrapper form .policy input{
+  margin-right: 10px;
+}
+.wrapper form .policy h3{
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+.wrapper form .button input{
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #4d636f ;
+  border: 1px solid #4d636f ;
+  cursor: pointer;
+  border-radius: 5px;
+}
+form .button input:hover{
+  background: #4d636f ;
+}
+.wrapper form .text{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+}
+.wrapper form .text a{
+  color: #4d636f ;
+  text-decoration: none;
+}
+form .text a:hover{
+  text-decoration: underline;
+}
+
+.messages {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  text-align: center;
+  width: 100%; /* Ensure messages span the full width */
+}
+
+.success-message, .error-message {
+  display: inline-block;
+  background-color: rgba(76, 175, 80, 0.8); /* Green background color for success message */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding to the message */
+  border-radius: 5px; /* Add rounded corners to the message */
+  margin-bottom: 10px; /* Add some space below the message */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to the message */
+  transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+  max-width: 80%; /* Set maximum width for the message */
+}
+
+.error-message {
+  background-color: rgba(255, 105, 97, 0.8); /* Red background color for error message */
+}

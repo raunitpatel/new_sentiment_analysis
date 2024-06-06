@@ -1,0 +1,87 @@
+{%extends 'base.html'%}
+{% block content %}
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+        <!-- Left Column -->
+        <div class="w3-col m3">
+            
+            
+            <!-- Interests -->
+            <div class="w3-card w3-round w3-white w3-hide-small">
+                <div class="w3-container">
+                    <p>Popular Searches</p>
+                    <p>
+                        <span class="w3-tag w3-small w3-theme-d5">News</span>
+                        <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+                        <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+                        <span class="w3-tag w3-small w3-theme-d2">Games</span>
+                        <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+                        <span class="w3-tag w3-small w3-theme">Games</span>
+                        <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+                        <span class="w3-tag w3-small w3-theme-l2">Food</span>
+                        <span class="w3-tag w3-small w3-theme-l3">Design</span>
+                        <span class="w3-tag w3-small w3-theme-l4">Art</span>
+                        <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+                    </p>
+                </div>
+            </div>
+            <br>
+
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+          
+            <div class="w3-row-padding">
+                <div class="w3-col m12">
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h6 class="w3-opacity">NEWS SENTIMENT ANALYSIS</h6>
+                            <p class="w3-border w3-padding">Get analysis of 20K+ news headllines</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+           
+
+            <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-col m2">
+            <div class="w3-card w3-round w3-white w3-center">
+                <div class="w3-container">
+                    <p>Number of Searches:</p>
+                    <p>Number of Users: </p>
+                    <p>Total number of News: </p>
+
+                </div>
+            </div>
+            <br>
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                    <h4 class="w3-center">Results: </h4>
+                
+                    <hr>
+                    <p><i class="fa fa-thumbs-up fa-fw w3-margin-right w3-text-theme"></i>Positive news : </p>
+                    <p><i class="fa fa- fa-circle w3-margin-right w3-text-theme"></i>Neutral news : </p>
+                    <p><i class="fa fa-thumbs-down fa-fw w3-margin-right w3-text-theme"></i>Negative news :</p>
+                </div>
+            </div>
+
+            <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+<br>
+
+{%endblock%}
