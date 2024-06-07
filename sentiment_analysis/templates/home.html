@@ -1,54 +1,93 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 {% block content %}
+<style>
+    .messages {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        text-align: center;
+        width: 100%;
+    }
+
+    .success-message,
+    .error-message {
+        display: inline-block;
+        background-color: rgba(76, 175, 80, 0.8);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.5s ease-in-out;
+        max-width: 80%;
+    }
+
+    .error-message {
+        background-color: rgba(255, 105, 97, 0.8);
+    }
+</style>
+{% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <div class="success-message">{{ message }}</div>
+    {% elif message.tags == 'error' %}
+    <div class="error-message">{{ message }}</div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+<div class="w3-container w3-content" style="max-width:1600px;margin-top:80px">
     <!-- The Grid -->
     <div class="w3-row">
         <!-- Left Column -->
         <div class="w3-col m3">
-            
-            
             <!-- Interests -->
             <div class="w3-card w3-round w3-white w3-hide-small">
                 <div class="w3-container">
                     <p>Popular Searches</p>
                     <p>
-                        <span class="w3-tag w3-small w3-theme-d5">News</span>
-                        <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-                        <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-                        <span class="w3-tag w3-small w3-theme-d2">Games</span>
-                        <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-                        <span class="w3-tag w3-small w3-theme">Games</span>
-                        <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-                        <span class="w3-tag w3-small w3-theme-l2">Food</span>
-                        <span class="w3-tag w3-small w3-theme-l3">Design</span>
-                        <span class="w3-tag w3-small w3-theme-l4">Art</span>
-                        <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+                        <span class="w3-tag w3-small w3-theme-d5">{{top_searches.0.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-d4">{{top_searches.1.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-d3">{{top_searches.2.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-d2">{{top_searches.3.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-d1">{{top_searches.4.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme">{{top_searches.5.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-l1">{{top_searches.6.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-l2">{{top_searches.7.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-l3">{{top_searches.8.keyword}}</span>
+                        <span class="w3-tag w3-small w3-theme-l4">{{top_searches.9.keyword}}</span>
+                        
                     </p>
                 </div>
             </div>
             <br>
-
             <!-- End Left Column -->
         </div>
 
         <!-- Middle Column -->
         <div class="w3-col m7">
-          
             <div class="w3-row-padding">
                 <div class="w3-col m12">
                     <div class="w3-card w3-round w3-white">
                         <div class="w3-container w3-padding">
                             <h6 class="w3-opacity">NEWS SENTIMENT ANALYSIS</h6>
-                            <p class="w3-border w3-padding">Get analysis of 20K+ news headllines</p>
-                            
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <div class="w3-row-padding" style="margin:0 -16px;">
+                                    <div class="w3-full" style="padding-right: 8px;">
+                                        <input type="text" class="w3-input w3-border" name="keywords" placeholder="Enter Keywords" autocomplete="off" required >
+                                    </div>
+                                </div>
+                                <button type="submit" class="w3-button w3-theme" style="margin-top: 16px;"><i class="fa fa-search"></i> Search</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
- 
-           
-
             <!-- End Middle Column -->
         </div>
 
@@ -56,32 +95,53 @@
         <div class="w3-col m2">
             <div class="w3-card w3-round w3-white w3-center">
                 <div class="w3-container">
-                    <p>Number of Searches:</p>
-                    <p>Number of Users: </p>
-                    <p>Total number of News: </p>
-
+                    <p>Number of Searches: {{num_searches}}</p>
+                    <p>Number of Users: {{num_users}}</p>
                 </div>
             </div>
             <br>
-            <div class="w3-card w3-round w3-white">
-                <div class="w3-container">
-                    <h4 class="w3-center">Results: </h4>
-                
-                    <hr>
-                    <p><i class="fa fa-thumbs-up fa-fw w3-margin-right w3-text-theme"></i>Positive news : </p>
-                    <p><i class="fa fa- fa-circle w3-margin-right w3-text-theme"></i>Neutral news : </p>
-                    <p><i class="fa fa-thumbs-down fa-fw w3-margin-right w3-text-theme"></i>Negative news :</p>
-                </div>
-            </div>
-
             <!-- End Right Column -->
         </div>
-
         <!-- End Grid -->
     </div>
-
+    <br>
     <!-- End Page Container -->
+    <!-- Note -->
+    <div class="w3-row">
+        <div class="w3-col m12">
+            <div class="w3-card w3-theme">
+                <div class="w3-container">
+                    <p style="text-align: center; font-weight: bold;">NOTE: To get sentiment analysis you need to register and login</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <br>
+    <!-- Collage of News Items -->
+    <div class="w3-row-padding" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        {% for article in articles_data %}
+        <div class="w3-col m4" style="flex: 0 0 auto;">
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container w3-padding">
+                    <h6 class="w3-opacity">{{ article.source }}</h6>
+                    <p>{{ article.description }}</p>
+                    <a href="{{ article.url }}" class="w3-button w3-small w3-theme" target="_blank">Read more</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- End Collage of News Items -->
+
 </div>
 <br>
-
-{%endblock%}
+<script>
+    setTimeout(function () {
+      var messages = document.querySelectorAll('.messages .success-message, .messages .error-message');
+      messages.forEach(function (message) {
+        message.style.display = 'none';
+      });
+    }, 2000);
+  </script>
+{% endblock %}

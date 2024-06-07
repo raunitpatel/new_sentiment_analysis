@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 80px auto;
+    }
+
+    .content {
+        display: grid;
+        gap: 20px;
+    }
+
+    h2,
+    h3 {
+        color: #4d636f;
+    }
+
+    p {
+        color: #333;
+        line-height: 1.6;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+</style>
+
+<div class="about-container">
+    <div class="content">
+        <h2>About Us</h2>
+        Welcome to NewsMood!<br><br>
+        At NewsMood, we believe that understanding the emotional tone behind the news is just as important as the facts
+        themselves. In today's fast-paced world, news stories bombard us from every direction, each carrying a different
+        weight of emotion. Our mission is to help you navigate this sea of information with a clearer understanding of
+        the sentiment behind the headlines.
+
+
+        <h3>What We Do</h3>
+        NewsMood is your go-to platform for insightful news sentiment analysis. Whether you're curious about the latest
+        trending topic or want to delve into the emotional landscape of a specific event, we've got you covered. Simply
+        enter a keyword, and our sophisticated sentiment analysis engine will sift through thousands of news articles,
+        bringing you not just the information, but the emotional pulse of the story.
+        <br><br>
+
+        <h3>How It Works</h3>
+        <ul>
+            <li><strong>Search: </strong>Start by entering a keyword or phrase related to the news you’re interested in.
+            </li>
+            <li><strong>Analyze: </strong>Our advanced algorithms scan news articles from diverse sources, analyzing the
+                sentiment of each piece : positive, negative, or neutral.
+            </li>
+            <li><strong>Discover: </strong> Explore a comprehensive summary of the news sentiment, with detailed graphs
+                and insights that reveal the overall emotional tone.
+            </li>
+        </ul>
+
+        <h3>Why Sentiment Matters</h3>
+        In a world where information overload is the norm, understanding the emotional undertones of news stories can
+        provide a more nuanced perspective. Sentiment analysis helps you to:
+        <br>
+        <ul>
+            <li><strong>Gauge Public Opinion: </strong>Understand how different media sources portray events and issues.
+            </li>
+            <li><strong>Stay Informed: </strong>Get a balanced view of the news, seeing beyond the headlines.
+            </li>
+            <li><strong>Make Better Decisions: </strong>Use sentiment insights to make informed choices in your personal
+                and professional life.
+            </li>
+        </ul>
+        <h3>Our Vision</h3>
+        We envision a world where news consumers are empowered with the tools to critically assess not only the facts
+        but also the emotions behind the news. By providing sentiment analysis, we aim to foster a more informed and
+        emotionally aware public, capable of making decisions with greater clarity and confidence.
+
+        <h3>Join Us</h3>
+        Dive into the world of news sentiment analysis with NewsMood. Explore, understand, and connect with the news on
+        a deeper level. Let’s navigate the emotional currents of today’s headlines together.
+        <br><br>
+        Feel free to reach out to us with any questions, feedback, or suggestions. Your input helps us improve and
+        better serve your needs.
+        <br><br>
+        Stay informed, stay aware, stay in tune with NewsMood!
+    </div>
+</div>
+{% endblock %}

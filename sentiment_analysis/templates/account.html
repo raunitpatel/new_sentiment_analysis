@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        background-color: #f5f5f5;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    h2 {
+        border-bottom: 2px solid #607d8b;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        /* Increased space between inputs */
+    }
+
+    .form-group label {
+        font-weight: bold;
+        margin-right: 20px;
+        min-width: 150px;
+        
+    }
+
+    .form-group input {
+        flex: 1;
+        padding: 8px;
+        box-sizing: border-box;
+        max-width: 400px;
+    }
+
+    .form-actions {
+        text-align: left;
+    }
+
+    .form-actions button {
+        background-color: #607d8b;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        /* border-radius: 4px; */
+        cursor: pointer;
+    }
+
+    .form-actions button:hover {
+        background-color: #455a64;
+    }
+
+    .personal-info h3 {
+        border-bottom: 2px solid #607d8b;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    .form-group small {
+        margin-left: 170px;
+        display: block;
+        color: #666;
+    }
+
+    .messages {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        text-align: center;
+        width: 100%;
+    }
+
+    .success-message,
+    .error-message {
+        display: inline-block;
+        background-color: rgba(76, 175, 80, 0.8);
+        color: #fff;
+        padding: 10px 20px;
+        /* border-radius: 5px; */
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.5s ease-in-out;
+        max-width: 80%;
+    }
+
+    .error-message {
+        background-color: rgba(255, 105, 97, 0.8);
+    }
+</style>
+
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <div class="success-message">{{ message }}</div>
+    {% elif message.tags == 'error' %}
+    <div class="error-message">{{ message }}</div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="container">
+    <br>
+    <br>
+    <h2>Change User</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            
+            <label for="username">Username:</label>
+            <span>{{ user.username }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            Raw passwords are not stored, so there is no way to see this user’s password, but you can change the
+                password using <a href="{% url 'password' %}" style="margin-left: 5px;"> this form</a>
+        </div>
+
+        <div class="personal-info">
+            <h3>Personal Info</h3>
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}">
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" value="{{ user.email }}">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Save and Update Changes</button>
+        </div>
+    </form>
+</div>
+<script>
+    setTimeout(function () {
+        var messages = document.querySelectorAll('.messages .success-message, .messages .error-message');
+        messages.forEach(function (message) {
+            message.style.display = 'none';
+        });
+    }, 2000);
+</script>
+{% endblock %}

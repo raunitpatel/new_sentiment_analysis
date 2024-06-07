@@ -1,0 +1,7 @@
+Django==4.1.6
+newsapi_python==0.2.7
+numpy==1.24.2
+pandas==2.0.0
+plotly==5.22.0
+scipy==1.13.1
+wordcloud==1.9.3

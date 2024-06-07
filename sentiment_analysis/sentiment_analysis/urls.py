@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from auth_app import views
+from auth_app import views as auth_views
+from analysis import views as analysis_views
+
+handler404 = 'auth_app.views.custom_404_view'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomePage,name='home'),
-    path('login/', views.LoginPage,name='login'),
-    path('register/', views.RegisterPage,name='register'),
-    path('dashboard/', views.DashboardPage,name='dashboard'),
-    path('logout/', views.LogoutPage,name='logout'),
-
+    path('', analysis_views.HomePage, name='home'),
+    path('login/', auth_views.LoginPage, name='login'),
+    path('register/', auth_views.RegisterPage, name='register'),
+    path('dashboard/', analysis_views.DashboardPage, name='dashboard'),
+    path('logout/', auth_views.LogoutPage, name='logout'),
+    path('about/', analysis_views.AboutPage, name='about'),
+    path('account/', auth_views.AccountPage, name='account'),
+    path('password/', auth_views.PasswordPage, name='password'),
+    path('news-sentiment/', analysis_views.HomePage, name='news-sentiment'),
 ]
