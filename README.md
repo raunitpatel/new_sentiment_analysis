@@ -9,12 +9,10 @@ NewsMood is your go-to platform for insightful news sentiment analysis. Whether 
 Python and Django need to be installed
 
 ```bash
-  
   pip install -r requirements.txt
 ```
 Go to sentiment_analysis folder
 ```bash
-  
   python manage.py runserver
 ```
 Then go to the browser and enter the url http://127.0.0.1:8000/
