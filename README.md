@@ -2,7 +2,7 @@
 # NewsMood Analyzer
 
 NewsMood is your go-to platform for insightful news sentiment analysis. Whether you're curious about the latest trending topic or want to delve into the emotional landscape of a specific event, we've got you covered. Simply enter a keyword, and our sophisticated sentiment analysis engine will sift through thousands of news articles, bringing you not just the information, but the emotional pulse of the story.
-## Key Concepts
+## Project Highlights
 
 - **Django Web App**
   - Developed a web application using Django.
