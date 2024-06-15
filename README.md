@@ -58,6 +58,7 @@ Go to sentiment_analysis folder
 ```bash
   python manage.py runserver
 ```
+NOTE - you need to create .env file and environmental variable 'NEWS_API_KEY' in the .env file.
 Then go to the browser and enter the url http://127.0.0.1:8000/
 
 ## Login and Signup
