@@ -12,6 +12,7 @@ import pandas as pd
 from .text_preprocessing import clean_text
 from .nlp import get_sentiment
 from .visualisation import get_pie_chart, get_line_chart, get_word_cloud, get_multiple_pie_charts
+import os
 
 def HomePage(request):
     if request.user.is_authenticated:
@@ -52,7 +53,7 @@ def HomePage(request):
                 all_searches = Search.objects.all()
                 num_searches = sum([search.count for search in all_searches])
                
-                newsapi = NewsApiClient(api_key='6134f06ddef547e59d043cebe9623b49')
+                newsapi = NewsApiClient(api_key=os.environ.get('NEWS_API_KEY'))
                 all_articles = newsapi.get_everything(q=search_keyword, language='en', sort_by='relevancy')
                 articles = all_articles.get('articles', [])
 
