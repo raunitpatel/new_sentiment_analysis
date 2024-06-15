@@ -21,7 +21,7 @@ Then go to the browser and enter the url http://127.0.0.1:8000/
 Users can register through register page.
 Then, user can login through login page.
 
-You can access the django admin page at http://127.0.0.1:8000/admin and login with username 'admin' and the above password.
+You can access the django admin page at http://127.0.0.1:8000/admin and login with username 'admin' and password 'admin@123'.
 
 Also a new admin user can be created using
 ```bash
