@@ -17,7 +17,7 @@ Go to sentiment_analysis folder
 ```
 Then go to the browser and enter the url http://127.0.0.1:8000/
 
-## Login and Register
+## Login and Signup
 Users can register through register page.
 Then, user can login through login page.
 
