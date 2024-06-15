@@ -35,15 +35,15 @@ NewsMood is your go-to platform for insightful news sentiment analysis. Whether 
 
 2. **Data Processing**
    - Parses and cleans data retrieved from NewsAPI and web scraping.
-  - Normalizes text, removes HTML tags, and prepares data for sentiment analysis.
+   - Normalizes text, removes HTML tags, and prepares data for sentiment analysis.
 
 3. **Sentiment Analysis**
    - Applies RoBERTa model for sentiment analysis of news articles.
-  - Classifies sentiment into categories such as positive, negative, or neutral.
+   - Classifies sentiment into categories such as positive, negative, or neutral.
 
 4. **Presentation**
    - Displays news articles along with sentiment analysis results.
-  - Implemented using Django web framework for a user-friendly interface.
+   - Implemented using Django web framework for a user-friendly interface.
 
 
 
