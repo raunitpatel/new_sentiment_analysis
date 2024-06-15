@@ -131,7 +131,7 @@ def DashboardPage(request):
                     .annotate(total_count=Sum('count'))
                     .order_by('-total_count')[:10])
 
-                newsapi = NewsApiClient(api_key='6134f06ddef547e59d043cebe9623b49')
+                newsapi = NewsApiClient(api_key=os.environ.get('NEWS_API_KEY'))
                 all_articles = newsapi.get_everything(q=search_keyword, language='en', sort_by='relevancy')
                 articles = all_articles.get('articles', [])
 
