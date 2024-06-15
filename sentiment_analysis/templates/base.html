@@ -21,7 +21,47 @@
     h5 {
       font-family: "Open Sans", sans-serif
     }
-    
+    .container{
+      min-height: 400px !important;
+    }
+    .footer-distributed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-sizing: border-box;
+      background-color: #607d8b;
+      color: white;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-left p,
+    .footer-center p,
+    .footer-right p {
+      margin: 0;
+    }
+
+    .footer-company-about {
+      margin-top: 20px;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
   </style>
 </head>
 
@@ -74,7 +114,7 @@
       </a>
       {% endif %}
     </div>
-    
+
   </div>
 
 
@@ -89,14 +129,48 @@
 
   <!-- Footer -->
   <footer class="w3-container w3-theme-d3 w3-padding-16">
-    <h5>Footer</h5>
+    <h5>Stay Connected with NewsMood</h5>
   </footer>
 
-  <footer class="w3-container w3-theme-d5">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <footer class="w3-container w3-theme-d5 footer-distributed">
+    <div class="footer-left">
+      <p class="footer-company-name">© 2024 NewsMood. All rights reserved.</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>123 NewsMood Lane</span> City, Country</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1 234 567 890</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@newsmood.com">support@newsmood.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About NewsMood</span>
+        <br>
+        Your go-to platform for insightful news sentiment analysis.
+      </p>
+      <br>
+
+      <div class="footer-icons">
+        <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook w3-hover-opacity"></a>
+
+        <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter w3-hover-opacity"></a>
+        <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram w3-hover-opacity"></a>
+        <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin w3-hover-opacity"></a>
+      </div>
+    </div>
   </footer>
-
-
 
 </body>
 
