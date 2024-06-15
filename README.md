@@ -30,17 +30,20 @@ NewsMood is your go-to platform for insightful news sentiment analysis. Whether 
 ## Project Workflow
 
 1. **Data Collection**
-   - Fetching news articles using NewsAPI.
-   - Scraping additional content from relevant websites.
+   - Utilizes NewsAPI to fetch recent news articles.
+   - Scrapes additional content from relevant websites for enriched dataset.
 
 2. **Data Processing**
-   - Parsing and cleaning data retrieved from NewsAPI and web scraping.
+   - Parses and cleans data retrieved from NewsAPI and web scraping.
+  - Normalizes text, removes HTML tags, and prepares data for sentiment analysis.
 
 3. **Sentiment Analysis**
-   - Applying RoBERTa model to analyze sentiment of news articles.
+   - Applies RoBERTa model for sentiment analysis of news articles.
+  - Classifies sentiment into categories such as positive, negative, or neutral.
 
 4. **Presentation**
-   - Displaying news articles along with sentiment analysis results on the Django web interface.
+   - Displays news articles along with sentiment analysis results.
+  - Implemented using Django web framework for a user-friendly interface.
 
 
 
@@ -81,4 +84,6 @@ Also a new admin user can be created using
 ![Screenshot 2024-06-15 133917](https://github.com/raunitpatel/new_sentiment_analysis/assets/118679198/75365443-c10e-4150-9656-8a0a34647473)
 
 
-
+## Acknowledgements
+- [NewsAPI](https://newsapi.org/) for providing access to news articles.
+- OpenAI for the RoBERTa model and Transformers library.
