@@ -14,7 +14,7 @@ NewsMood is your go-to platform for insightful news sentiment analysis. Whether 
 
 - **Web Scraping**
   - Implemented web scraping techniques to gather supplementary news content.
-  - Used BeautifulSoup and Scrapy libraries for parsing and extraction.
+  - Used BeautifulSoup for parsing and extraction.
 
 - **Sentiment Analysis with RoBERTa**
   - Integrated a pretrained RoBERTa model for sentiment analysis.
